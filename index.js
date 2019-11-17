@@ -32,7 +32,7 @@ io.on('connection', function(socket){
     }
 
     socket.on('updatePosition', data => {
-        console.log('alo');
+        console.log(data);
         player.position.x = data.position.x;
         player.position.y = data.position.y;
         player.position.z = data.position.z;
