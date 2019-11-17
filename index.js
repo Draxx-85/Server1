@@ -31,11 +31,10 @@ io.on('connection', function(socket){
         }
     }
 
-    socket.on('updatePosition', data => {
-        console.log(data);
-        player.position.x = data.position.x;
-        player.position.y = data.position.y;
-        player.position.z = data.position.z;
+    socket.on('updatePosition', function(data){
+        player.position.x = parseFloat(data.position._x);
+        player.position.y = parseFloat(data.position._y);
+        player.position.z = parseFloat(data.position._z);
         var d = {
             id : thisPlayerID,
             position : {
